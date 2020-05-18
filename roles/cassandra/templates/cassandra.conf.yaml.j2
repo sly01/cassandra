@@ -1,0 +1,27 @@
+cluster_name: {{ cluster_name }}
+listen_address: {{ ansible_ssh_host }}
+rpc_address: 0.0.0.0
+broadcast_rpc_address: {{ ansible_ssh_host }}
+num_tokens: 256
+seed_provider:
+  - class_name: org.apache.cassandra.locator.SimpleSeedProvider
+    parameters:
+      - seeds: {{ seed_ips }}
+endpoint_snitch: GossipingPropertyFileSnitch
+auto_bootstrap: false
+commitlog_sync: periodic
+commitlog_sync_period_in_ms: 10000
+partitioner: org.apache.cassandra.dht.Murmur3Partitioner
+data_file_directories:
+  - /var/lib/cassandra/data
+commitlog_directory: /var/lib/cassandra/commitlog
+saved_caches_directory: /var/lib/cassandra/saved_caches
+hints_directory: /var/lib/cassandra/hints
+
+start_native_transport: true
+native_transport_port: 9042
+
+start_rpc: true
+rpc_port: 9160
+rpc_keepalive: true
+rpc_server_type: sync

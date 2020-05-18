@@ -1,0 +1,32 @@
+---
+# tasks file for cassandra
+
+- name: Configure repo for cassandra
+  yum_repository:
+    name: cassandra
+    description: Apache Cassandra
+    baseurl: https://www.apache.org/dist/cassandra/redhat/311x/
+    gpgcheck: True
+    gpgkey: https://www.apache.org/dist/cassandra/KEYS
+    repo_gpgcheck: True
+
+- name: Install cassandra
+  yum:
+    name: cassandra
+    state: present
+    
+- name: Copy configuration cassandra properties
+  template:
+    src: cassandra-rackdc.properties.j2
+    dest: /etc/cassandra/conf/cassandra-rackdc.properties
+
+- name: Copy config to cassandra
+  template:
+      dest: /etc/cassandra/conf/cassandra.yaml # required. Location to render the template to on the remote machine.
+      src: cassandra.conf.yaml.j2 # required. Path of a Jinja2 formatted template on the Ansible controller. This can be a relative or absolute path.
+
+- name: Enable & Start cassandra service
+  service:
+      name: cassandra # required. Name of the service.
+      enabled: yes # not required. Whether the service should start on boot. B(At least one of state and enabled are required.)
+      state: started

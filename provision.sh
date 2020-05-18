@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo "Adding authorized ssh_keys"
+mkdir -p /root/.ssh
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIHC93Wal4n4/TEktQxMGUHZKvLuyC6TWttD81KHinBD7HRM1RAO7gGCNSjjtbBP33wJqpI6xJ6hQePz7fkIQ3Fazu1/OmtHVjJbs+Kqcn1laJ+vnZbYRGR44p/FrP2bbWdZu8wX5HNTQexrun7JYYA8AkC+0RIS7WcwW6hRp2imt4bCcyJqLlv1d+6HId8J7RetfAvEyeDki3Igpd1p7r1iHILvp2gJtz8zDiWPzhp4kfsdFCm7qMaeyQtjFiMYgLR62YfTHIq4IKi0NdEEKEuqSkkvTScYcMsCWH/edrWp4gDVGwJYzxQaIH1w1GecN2W8pnVxVdp6M0ewnK7wjZ aerkoc@Ahmets-MacBook-Pro.local" > /root/.ssh/authorized_keys

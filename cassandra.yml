@@ -1,0 +1,10 @@
+---
+- hosts: dc1
+  gather_facts: yes
+  roles:
+    - { role: cassandra, cluster_name: "EPAM Malaga Cluster", dc: "dc1" }
+
+- hosts: dc2
+  gather_facts: yes
+  roles:
+    - { role: cassandra, cluster_name: "EPAM Malaga Cluster", dc: "dc2" }

@@ -1,0 +1,20 @@
+[dc1]
+cassandra1 ansible_host=192.168.33.241 ansible_user=root
+cassandra2 ansible_host=192.168.33.242 ansible_user=root
+cassandra3 ansible_host=192.168.33.243 ansible_user=root
+cassandra4 ansible_host=192.168.33.244 ansible_user=root
+cassandra5 ansible_host=192.168.33.245 ansible_user=root
+cassandra6 ansible_host=192.168.33.246 ansible_user=root
+
+[dc2]
+cassandra7  ansible_host=192.168.33.247 ansible_user=root
+cassandra8  ansible_host=192.168.33.248 ansible_user=root
+cassandra9  ansible_host=192.168.33.249 ansible_user=root
+cassandra10 ansible_host=192.168.33.250 ansible_user=root
+cassandra11 ansible_host=192.168.33.251 ansible_user=root
+cassandra12 ansible_host=192.168.33.252 ansible_user=root
+
+[all:vars]
+seed_ips="192.168.33.241"
+
+
